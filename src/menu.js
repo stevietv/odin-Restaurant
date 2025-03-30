@@ -1,4 +1,5 @@
-import * as images from './images/images.js'
+import * as images from './images/images.js';
+import { Element } from './helpers/helpers.js';
 
 export const Menu = [];
 class MenuItem {
@@ -29,8 +30,7 @@ Menu.push(new MenuItem('Veggie Quesadillas', 'Crispy baked tortilla wrap filled 
 Menu.push(new MenuItem('Churros', 'A plate of tasty mexican donuts coated in cinnamon sugar', 'Dessert', 6.99, images.ChurrosImage));
 
 export function DisplayMenu() {
-    let menuContainer = document.createElement('div');
-    menuContainer.className = 'menuContainer';
+    let menuContainer = Element('div', ['menuContainer']);
 
     menuContainer.appendChild(CreateHeader('Starters'));
     menuContainer.appendChild(DisplayCourseItems('Starter'));
@@ -45,10 +45,7 @@ export function DisplayMenu() {
 }
 
 function CreateHeader(title) {
-    let headerElement = document.createElement('h1');
-    headerElement.classList = 'courseHeader'
-    headerElement.id = title;
-    headerElement.textContent = title;
+    let headerElement = Element('h1', ['courseHeader'], title, title)
 
     return headerElement;
 }
@@ -57,9 +54,8 @@ function CreateHeader(title) {
 function DisplayCourseItems(course) {
     let filteredMenu = Menu.filter(menuItem => menuItem.course == course);
 
-    let menuCourseContainer = document.createElement('div');
-    menuCourseContainer.className = 'courseContainer';
-    
+    let menuCourseContainer = Element('div', ['courseContainer']);
+   
     filteredMenu.forEach((menuItem => {
         menuCourseContainer.appendChild(DisplayMenuItem(menuItem));
     }))
@@ -68,9 +64,15 @@ function DisplayCourseItems(course) {
 }
 
 function DisplayMenuItem(menuItem) {
-    let menuItemContainer = document.createElement('div');
-    menuItemContainer.className = 'menuItemContainer';
-    menuItemContainer.textContent = menuItem.name;
+    let menuItemContainer = Element('div', ['menuItemContainer']);
+
+    let menuItemImage = Element('img', ['menuItemImage'], menuItem.name);
+    menuItemImage.src = menuItem.image;
+    menuItemContainer.appendChild(menuItemImage);
+
+    menuItemContainer.appendChild(Element('div', ['menuItemName'], '', menuItem.name));
+    menuItemContainer.appendChild(Element('div', ['menuItemDescription'], '', menuItem.description));
+    menuItemContainer.appendChild(Element('div', ['menuItemPrice'], '', menuItem.price));
 
     return menuItemContainer;
 }

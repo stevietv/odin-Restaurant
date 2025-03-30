@@ -9,6 +9,8 @@ export function AddNavigation() {
             Navigate(button.id);
         })
     })
+
+    Navigate(home);
 }
 
 function Navigate(location) {
