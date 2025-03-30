@@ -1,6 +1,6 @@
 import { about } from "./about";
-import { home } from "./home";
-import { Menu, DisplayMenu } from "./menu";
+import { DisplayMenu } from "./menu";
+import { DisplayHome } from "./home";
 
 export function AddNavigation() {
     const buttons = document.querySelectorAll('button');
@@ -10,7 +10,7 @@ export function AddNavigation() {
         })
     })
 
-    Navigate(home);
+    Navigate("home");
 }
 
 function Navigate(location) {
@@ -18,7 +18,7 @@ function Navigate(location) {
     const content = document.getElementById("content");
     switch (location) {
         case "home":
-            content.innerHTML= home;
+            content.appendChild(DisplayHome());
             break;
         case "menu":
             content.appendChild(DisplayMenu());

@@ -1,7 +1,7 @@
 import * as images from './images/images.js';
 import { Element } from './helpers/helpers.js';
 
-export const Menu = [];
+const Menu = [];
 class MenuItem {
     constructor(name, description, course, price, image) {
         this.name = name;
@@ -56,9 +56,9 @@ function DisplayCourseItems(course) {
 
     let menuCourseContainer = Element('div', ['courseContainer']);
    
-    filteredMenu.forEach((menuItem => {
+    filteredMenu.forEach(menuItem => {
         menuCourseContainer.appendChild(DisplayMenuItem(menuItem));
-    }))
+    })
 
     return menuCourseContainer;
 }
