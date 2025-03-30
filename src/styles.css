@@ -20,6 +20,10 @@ body {
     justify-content: center;
 }
 
+.navigation {
+    margin-bottom: 20px;
+}
+
 .menuItemContainer {
     display: grid;
     grid-template-columns: 200px 600px;
