@@ -4,24 +4,28 @@ body {
     background-size: cover;
 }
 
-.mainContainer, .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.mainContainer {
+    display: grid;
+    grid-template-columns: 70%;
+    justify-content: center;
 }
 
-.mainContainer {
-    width: 100%;
-    justify-content: center;
+header {
+    justify-self: center;
+}
+
+.header {
+    display: grid;
+    grid-auto-flow: row;
 }
 
 #content {
-    display: flex;
-    justify-content: center;
+    justify-self: center;
 }
 
 .navigation {
     margin-bottom: 20px;
+    justify-self: center;
 }
 
 .menuItemContainer {
@@ -59,28 +63,28 @@ body {
 }
 
 .homeContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+    row-gap: 10px;
+    margin-bottom: 10px;
 }
 
 .welcomeContainer {
-    width: 70%;
-    align-self: center;
     padding: 5px 15px;
     text-align: center;
+    width: 60%
 }
 
 .hoursContainer {
+    width: 60%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    align-self: center;
-    width: 70%;
     padding: 5px 15px;
 }
 
 .boxBorder {
     border: 2px rgb(219,126,19) solid;
     border-radius: 5px;
+    background-color: rgb(219,126,19,0.1);
 }
