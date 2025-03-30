@@ -1,4 +1,4 @@
-.mainContainer {
+.mainContainer, .header {
     display: flex;
     flex-direction: column;
     justify-content: center;
