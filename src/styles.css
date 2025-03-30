@@ -19,6 +19,18 @@ header {
     grid-auto-flow: row;
 }
 
+button {
+    background-color: rgb(219, 126, 19); /* Green */
+    border: none;
+    color: white;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 15px;
+}
+
 #content {
     justify-self: center;
 }
@@ -62,15 +74,16 @@ header {
     list-style: none;
 }
 
-.homeContainer {
+.homeContainer, .aboutContainer {
     display: grid;
     grid-template-columns: 100%;
     justify-items: center;
     row-gap: 10px;
     margin-bottom: 10px;
+    min-width: 600px;
 }
 
-.welcomeContainer {
+.welcomeContainer, .addressContainer {
     padding: 5px 15px;
     text-align: center;
     width: 60%
@@ -84,7 +97,7 @@ header {
 }
 
 .boxBorder {
-    border: 2px rgb(219,126,19) solid;
+    border: 2px rgb(219,126,19, 0.3) solid;
     border-radius: 5px;
     background-color: rgb(219,126,19,0.1);
 }

@@ -1,4 +1,4 @@
-import { about } from "./about";
+import { DisplayAbout } from "./about";
 import { DisplayMenu } from "./menu";
 import { DisplayHome } from "./home";
 
@@ -24,7 +24,7 @@ function Navigate(location) {
             content.appendChild(DisplayMenu());
             break;
         case "about":
-            content.innerHTML = about;
+            content.appendChild(DisplayAbout());
             break;
         default:
             break;
