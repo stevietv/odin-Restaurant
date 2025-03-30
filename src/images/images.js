@@ -1,3 +1,4 @@
+export { default as Logo } from './logo.png';
 
 export { default as SoupImage } from './soup.jpeg';
 export { default as NachosImage } from './nachos.jpeg';
