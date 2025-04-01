@@ -1,5 +1,5 @@
 {
-  "name": "Restaurant Webpack Page",
+  "name": "restaurant-webpack-page",
   "version": "0.0.1",
   "description": "A restaurant page using js to practice webpack",
   "scripts": {
